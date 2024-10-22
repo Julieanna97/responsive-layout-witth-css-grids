@@ -1,0 +1,204 @@
+* {
+
+    box-sizing: border-box;
+}
+
+.container {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+
+    /* Shorthand for gap, 2 values */
+    /* <row-gap> <column-gap> */
+    gap: 10px 10px;
+
+    /* Shorthand for 1 gap, 1 value */
+    /* gap: 30px; */
+
+    display: grid;
+    width: 100%;
+
+    margin-bottom: 10px;
+
+
+}
+
+
+.container-2 {
+    border: 1px solid black;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+
+    /* Shorthand for gap, 2 values */
+    /* <row-gap> <column-gap> */
+    gap: 10px;
+
+    /* Shorthand for 1 gap, 1 value */
+    /* gap: 30px; */
+
+    display: grid;
+    width: 100%;
+    padding: 10px;
+
+
+}
+
+.container >*, .container-2 > * {
+
+    height: 100px;
+}
+
+
+/* General styling for CSS grid containers */
+
+.header {
+
+    border: 1px solid black;
+    background-color: orange;
+    grid-column: span 12;
+}
+
+.box1 {
+
+    background-color: darkred;
+    grid-column: span 3;
+
+
+}
+
+.box2 {
+
+    background-color: chartreuse;
+    grid-column: span 6;
+
+}
+
+.box3 {
+
+    background-color: cornsilk;
+    grid-column: span 3;
+
+}
+
+.content {
+
+    background-color: aquamarine;
+    border: 1px solid black;
+    grid-column: span 8;
+
+}
+
+.sidebar {
+
+    background-color: darksalmon;
+    border: 1px solid black;
+    grid-column: span 4;
+
+}
+
+.footer-section1 {
+
+    background-color: deeppink;
+    grid-column: span 3;
+
+}
+
+.footer-section2 {
+
+    background-color: darkslateblue;
+    grid-column: span 3;
+
+}
+
+.footer-section3 {
+
+    background-color: plum;
+    grid-column: span 3;
+
+}
+
+.footer-section4 {
+
+    background-color: cornflowerblue;
+    grid-column: span 3;
+
+}
+
+[class*='box'], [class*='footer'] {
+
+    border: 1px solid black;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Wide desktop screens: larger than 1200px */
+@media (min-width: 1200px) {
+    .box1 {
+        grid-column: span 3;
+    }
+    
+    .box2 {
+        grid-column: span 6;
+    }
+
+    .box3 {
+        grid-column: span 3;
+    }
+}
+
+/* Smaller desktop screens: between 1200px and 960px */
+@media (max-width: 1200px) and (min-width: 960px) {
+    .box1 {
+        grid-column: span 4;
+    }
+
+    .box2 {
+        grid-column: span 8;
+    }
+
+    .box3 {
+        grid-column: span 12;
+    }
+}
+
+/* Tablets such as iPad: between 960px and 768px */
+@media (max-width: 960px) and (min-width: 768px) {
+    .box1 {
+        grid-column: span 4; /* Each box takes one-third of the width */
+    }
+
+    .box2 {
+        grid-column: span 4; /* Each box takes one-third of the width */
+    }
+
+    .box3 {
+        grid-column: span 4; /* Each box takes one-third of the width */
+    }
+
+    .content {
+        grid-column: span 8; /* Content takes two-thirds of the width */
+    }
+
+    .sidebar {
+        grid-column: span 4; /* Sidebar takes one-third of the width */
+    }
+
+    .footer-section1,
+    .footer-section2,
+    .footer-section3,
+    .footer-section4 {
+        grid-column: span 6; /* Footer sections take full width */
+    }
+}
+/* Mobile phones: less than 768px */
+@media (max-width: 768px) {
+    .box1, .box2, .box3, .content, .sidebar {
+        grid-column: span 12; /* All boxes take full width */
+    }
+
+    .footer-section1,
+    .footer-section2,
+    .footer-section3,
+    .footer-section4 {
+        grid-column: span 12; /* Footer sections take full width */
+    }
+}
